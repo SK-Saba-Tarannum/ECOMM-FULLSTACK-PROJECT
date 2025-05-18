@@ -26,17 +26,14 @@ function Login() {
       const token = response.data.token;
       localStorage.setItem('token', token);
 
-      // Decode token to get role
       const decoded = jwtDecode(token);
       const role = decoded.role;
 
-      // Store role locally if needed
       localStorage.setItem('role', role);
       localStorage.setItem('userId', decoded.id);
 
       alert('Login successful!');
 
-      // Navigate based on role
       if (role === 'SELLER') {
         navigate('/seller');
       } else if (role === 'CUSTOMER') {
