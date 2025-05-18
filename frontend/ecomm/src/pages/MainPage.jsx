@@ -98,7 +98,7 @@ function MainPage() {
       <header className="flex justify-between items-center p-4 bg-blue-600 text-white">
         <div className="flex items-center gap-2 text-black">
           <ShoppingBagIcon className="size-8 text-yellow-300 fill-black" />
-          <h1 className="text-xl font-bold">Babool Store</h1>
+          <h1 className="text-2xl font-bold">Babool Store</h1>
         </div>
         <div className="relative flex gap-2 bg-white rounded-md">
           <input
@@ -132,7 +132,7 @@ function MainPage() {
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="border border-gray-200 rounded-md p-6 shadow-md hover:shadow-lg transition-shadow duration-300 relative"
+              className="border border-gray-300 rounded-md p-4 shadow-md hover:shadow-lg transition-shadow duration-300 relative"
             >
               <Heart
                 className="absolute top-2 right-2 text-red-500 cursor-pointer hover:scale-110 transition"
@@ -143,7 +143,7 @@ function MainPage() {
                 <img
                   src={product.imageUrl}
                   alt={product.name}
-                  className="w-full h-40 object-contain rounded-md"
+                  className="w-full h-60 object-contain rounded-md"
                   onClick={() => handleProductClick(product.id)}
                 />
               </div>
@@ -152,7 +152,7 @@ function MainPage() {
               </p>
               
             
-              <p className="text-sm text-gray-700 mb-2 line-clamp-1">
+              <p className="text-sm text-gray-800 mb-2 line-clamp-1">
                 {product.description}
               </p>
               <div className="flex flex-col gap-3">

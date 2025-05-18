@@ -57,7 +57,7 @@ const WishlistPage = () => {
 
   if (!wishlist.length) {
     return (
-      <div className="text-center mt-10 text-gray-500 text-xl">
+      <div className="text-center mt-10 text-gray-600 text-xl">
         Your wishlist is empty.
       </div>
     );
@@ -80,10 +80,10 @@ const WishlistPage = () => {
                 onClick={() => goToProduct(product.id)}
               >
                 <h3 className="text-lg font-semibold">{product.name}</h3>
-                <p className="text-sm text-gray-500 mb-1 line-clamp-1">
+                <p className="text-sm text-gray-600 mb-1 line-clamp-1">
                   {product.description}
                 </p>
-                <p className="font-bold text-gray-800">${product.price}</p>
+                <p className="font-bold text-gray-900">${product.price}</p>
               </div>
 
               <div className="flex flex-col items-end gap-2">
