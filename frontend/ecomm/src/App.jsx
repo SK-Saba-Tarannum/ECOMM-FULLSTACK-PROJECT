@@ -30,7 +30,6 @@ function App() {
         <Route path="/product/:id" element={<ProductDetails />} />
         {/* <Route path="/orders" element={<ProtectedRoute><OrdersPage /></ProtectedRoute>} /> */}
         <Route path="/orders/:orderId" element={<ProtectedRoute allowedRoles={['CUSTOMER']}><OrdersPage /></ProtectedRoute>} />
-
         <Route
           path="/addtocart"
           element={
