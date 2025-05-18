@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
 
@@ -75,7 +77,7 @@ const CartPage = () => {
         {cartItems.map((item) => (
           <li
             key={item.id}
-            className="flex flex-col md:flex-row items-center justify-between border rounded-md p-4 shadow-sm"
+            className="flex flex-col md:flex-row bg-slate-200 items-center justify-between border rounded-md p-4 shadow-sm"
           >
             <div className="flex items-center gap-4 w-full md:w-auto">
               {item.product.imageUrl && (
@@ -127,7 +129,8 @@ const CartPage = () => {
       </div>
 
       <div className="text-right mt-4">
-        <button className="bg-black text-white px-6 py-2 rounded hover:bg-gray-800">
+        <button onClick={()=>{navigate("/paymentspage")}}
+        className="bg-black text-white px-6 py-2 rounded hover:bg-gray-800">
           Proceed to Checkout
         </button>
       </div>

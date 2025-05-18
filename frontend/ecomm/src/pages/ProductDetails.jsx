@@ -31,7 +31,7 @@ function ProductDetails() {
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-6 max-w-5xl mx-auto mt-10">
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row bg-slate-200  p-4 gap-8">
         {/* Image and buttons */}
         <div className=" flex flex-col">
           <img
@@ -57,7 +57,7 @@ function ProductDetails() {
             <button
               onClick={() => {
                 localStorage.setItem("buyNow", JSON.stringify(product));
-                navigate("/paymentpage");
+                navigate("/paymentspage");
               }}
               className="bg-yellow-400 text-black font-bold px-4 py-3 rounded hover:bg-yellow-500"
             >

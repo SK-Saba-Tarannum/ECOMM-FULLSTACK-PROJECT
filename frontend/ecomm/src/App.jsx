@@ -6,10 +6,11 @@ import CartPage from './pages/CartPage';
 import Wishlist from './pages/WishlistPage';
 import Registration from './pages/Registration';
 import Login from './pages/login';
-import PaymentPage from './pages/PaymentPage';
+import PaymentsPage from './pages/PaymentsPage';
 import { isAuthenticated, getRole } from './utils/auth';
 import OrdersPage from './pages/OrdersPage';
 import SellerPage from './pages/SellerPage';
+import OrderingPage from './pages/OrderingPage';
 
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
@@ -39,6 +40,15 @@ function App() {
           }
         />
         <Route
+          path="/orderingpage"
+          element={
+            <ProtectedRoute allowedRoles={['CUSTOMER']}>
+              <OrderingPage />
+            </ProtectedRoute>
+          }
+        />
+        
+        <Route
           path="/seller"
           element={
             <ProtectedRoute allowedRoles={['SELLER']}>
@@ -46,6 +56,15 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/payment"
+          element={
+            <ProtectedRoute allowedRoles={['SELLER']}>
+              <PaymentsPage />
+            </ProtectedRoute>
+          }
+        />
+        
         
         <Route
           path="/wishlist"
@@ -56,10 +75,10 @@ function App() {
           }
         />
         <Route
-          path="/paymentpage"
+          path="/paymentspage"
           element={
             <ProtectedRoute allowedRoles={['CUSTOMER']}>
-              <PaymentPage />
+              <PaymentsPage />
             </ProtectedRoute>
           }
         />
