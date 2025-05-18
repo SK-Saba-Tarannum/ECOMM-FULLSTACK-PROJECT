@@ -18,13 +18,11 @@ function Registration() {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/auth/register',{
-
-      // await axios.post('http://localhost:5000/register', {
+      await axios.post('https://ecomm-fullstack-project.onrender.com/api/auth/register',{
         name,
         email,
         password,
-        role: role.toUpperCase(), // CUSTOMER | SELLER | ADMIN
+        role: role.toUpperCase(),
       });
 
       alert('Registration successful!');

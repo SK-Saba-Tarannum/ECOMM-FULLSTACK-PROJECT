@@ -17,7 +17,7 @@ const WishlistPage = () => {
 
     const fetchWishlist = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/wishlist", {
+        const res = await axios.get("https://ecomm-fullstack-project.onrender.com/api/wishlist", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -36,7 +36,7 @@ const WishlistPage = () => {
 
   const removeFromWishlist = async (productId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/wishlist/${productId}`, {
+      await axios.delete(`https://ecomm-fullstack-project.onrender.com/api/wishlist/${productId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

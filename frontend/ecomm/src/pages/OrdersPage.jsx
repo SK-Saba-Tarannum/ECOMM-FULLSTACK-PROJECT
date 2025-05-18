@@ -12,7 +12,7 @@ const OrdersPage = () => {
     const fetchOrder = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get(`http://localhost:5000/api/orders/${orderId}`, {
+        const res = await axios.get(`https://ecomm-fullstack-project.onrender.com/api/orders/${orderId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setOrder(res.data);

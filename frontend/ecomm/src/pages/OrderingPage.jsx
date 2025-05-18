@@ -20,7 +20,7 @@ const OrderingPage = () => {
     }
 
     axios
-      .get("http://localhost:5000/api/cart", {
+      .get("https://ecomm-fullstack-project.onrender.com/api/cart", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -50,9 +50,7 @@ const OrderingPage = () => {
       return;
     }
 
-    // Fake payment process
     alert(`Payment of $${totalAmount.toFixed(2)} successful!`);
-    // You could redirect or send data to your backend/payment gateway here
   };
 
   if (loading) return <div className="p-4">Loading...</div>;

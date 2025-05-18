@@ -8,23 +8,19 @@ function MainPage() {
   const [search, setSearch] = useState("");
 
   const navigate = useNavigate();
-
-  // Get token for auth
   const token = localStorage.getItem("token");
 
-  // Fetch products from your backend
   useEffect(() => {
-    axios.get("http://localhost:5000/api/products")
+    axios.get("https://ecomm-fullstack-project.onrender.com/api/products")
       .then((res) => setProducts(res.data))
       .catch((err) => console.error("Failed to fetch products:", err));
   }, []);
 
-  // Filter products by name
+
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase())
   );
 
-  // Add to cart (POST to backend)
   const addToCart = async (product) => {
     if (!token) {
       alert("Please login to add items to cart.");
@@ -33,7 +29,7 @@ function MainPage() {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/cart", 
+      await axios.post("https://ecomm-fullstack-project.onrender.com/api/cart", 
         { productId: product.id, quantity: 1 },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -43,7 +39,6 @@ function MainPage() {
     }
   };
 
-  // Add to wishlist (POST to backend)
   const addToWishlist = async (product) => {
     if (!token) {
       alert("Please login to add items to wishlist.");
@@ -52,7 +47,7 @@ function MainPage() {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/wishlist",
+      await axios.post("https://ecomm-fullstack-project.onrender.com/api/wishlist",
         { productId: product.id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -72,7 +67,7 @@ function MainPage() {
     }
   
     try {
-      const res = await axios.post("http://localhost:5000/api/orders", 
+      const res = await axios.post("https://ecomm-fullstack-project.onrender.com/api/orders", 
         { productId: product.id, quantity: 1 },
         { headers: { Authorization: `Bearer ${token}` } }
       );

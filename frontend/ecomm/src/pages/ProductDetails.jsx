@@ -9,9 +9,7 @@ function ProductDetails() {
 
   useEffect(() => {
     if (productId) {
-      fetch(`http://localhost:5000/api/products/${productId}`)
-
-      // fetch(`http://localhost:5000/api/products/${productId}`)
+      fetch(`https://ecomm-fullstack-project.onrender.com/api/products/${productId}`)
         .then((res) => {
           if (!res.ok) throw new Error("Product not found");
           return res.json();
@@ -32,7 +30,6 @@ function ProductDetails() {
   return (
     <div className="bg-white shadow-lg rounded-lg p-6 max-w-5xl mx-auto mt-10">
       <div className="flex flex-col md:flex-row bg-slate-200  p-4 gap-8">
-        {/* Image and buttons */}
         <div className=" flex flex-col">
           <img
             src={product.imageUrl}
@@ -44,7 +41,6 @@ function ProductDetails() {
             <button
               className={`flex items-center bg-blue-600 text-white p-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-300`}
               onClick={() => {
-                // Add to cart logic (e.g., localStorage or backend)
                 alert(`${product.name} added to cart`);
               }}
               disabled={product.stock === 0}

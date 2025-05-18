@@ -12,7 +12,7 @@ const CartPage = () => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/cart", {
+        const res = await axios.get("https://ecomm-fullstack-project.onrender.com/api/cart", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -33,7 +33,7 @@ const CartPage = () => {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/cart/${cartItemId}`,
+        `https://ecomm-fullstack-project.onrender.com/api/cart/${cartItemId}`,
         { quantity },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -50,7 +50,7 @@ const CartPage = () => {
 
   const removeItem = async (cartItemId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/cart/${cartItemId}`, {
+      await axios.delete(`https://ecomm-fullstack-project.onrender.com/api/cart/${cartItemId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

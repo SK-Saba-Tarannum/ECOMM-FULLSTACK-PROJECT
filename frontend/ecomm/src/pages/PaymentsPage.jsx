@@ -1,17 +1,3 @@
-// 
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -32,7 +18,7 @@ const PaymentsPage = () => {
     }
 
     axios
-      .get("http://localhost:5000/api/cart", {
+      .get("https://ecomm-fullstack-project.onrender.com/api/cart", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
